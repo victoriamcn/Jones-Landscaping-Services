@@ -1,4 +1,4 @@
-# Landscaping Services Site
+# Jones Landscaping Services Site
 Website for a local landscaping services provider in my home state of South Carolina.
 
 ## Resources Used
