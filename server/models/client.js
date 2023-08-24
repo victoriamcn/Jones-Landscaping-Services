@@ -4,9 +4,6 @@ const { Schema, model } = require('mongoose');
 
 const clientSchema = new Schema(
   {
-    _id {
-        type
-    },
     firstname: {
         type: String,
         required: true,
@@ -19,14 +16,51 @@ const clientSchema = new Schema(
         unique: true,
         trim: true,
     },
-    // connect to property
+    hasdog: {
+        type: Boolean,
+        required: true,
+    },
+    aknowledgesdogpolicy: {
+        type: Boolean,
+        required: true,
+    },
+    mainphone: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+    },
+    secondphone: {
+        type: String,
+        required: false,
+        trim: true,
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true,
+        match: [/.+@.+\..+/, 'Must use a valid email address'],
+    },
+    paid: {
+        type: Boolean,
+        required: true,
+    },
+    birthday: {
+        type: Date,
+        required: false,
+    },
     property: {
         type: Schema.Types.ObjectId,
         ref: 'Property'
     },
-    // payment type
-    // birthday
-    // 
+    appointments: {
+        type: Schema.Types.ObjectId,
+        ref: 'Appointments'
+    },
+    notes: {
+        type: Schema.Types.ObjectId,
+        ref: 'Notes'
+    }
   }
 );
 
