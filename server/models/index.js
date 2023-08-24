@@ -1,5 +1,7 @@
 const Client = require('./client');
-const Property = require('');
+const Property = require('./property');
 const Services = require('');
+const Appointments = require('');
+const Notes = require('');
 
-module.exports = { Client, Property, Services };
+module.exports = { Client, Property, Services, Appointments, Notes };

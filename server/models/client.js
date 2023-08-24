@@ -16,14 +16,7 @@ const clientSchema = new Schema(
         unique: true,
         trim: true,
     },
-    hasdog: {
-        type: Boolean,
-        required: true,
-    },
-    aknowledgesdogpolicy: {
-        type: Boolean,
-        required: true,
-    },
+
     mainphone: {
         type: String,
         required: true,
@@ -49,18 +42,24 @@ const clientSchema = new Schema(
         type: Date,
         required: false,
     },
-    property: {
-        type: Schema.Types.ObjectId,
-        ref: 'Property'
-    },
-    appointments: {
-        type: Schema.Types.ObjectId,
-        ref: 'Appointments'
-    },
-    notes: {
+    property:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Property'
+        }
+    ],
+    appointments:[
+        {
+            type: Schema.Types.ObjectId,
+            ref: 'Appointments'
+        }
+    ],
+    notes: [
+        {
         type: Schema.Types.ObjectId,
         ref: 'Notes'
-    }
+        }
+    ]
   }
 );
 
